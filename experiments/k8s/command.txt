@@ -1,0 +1,6 @@
+cd soma/chaos/
+# 默认使用 docker 容器运行时
+./helm.exe install train-ticket train-ticket-simple -n train-ticket --create-namespace --set chaos-mesh.chaosDaemon.runtime=containerd --set ‘
+chaos-mesh.chaosDaemon.socketPath=
+/run/containerd/containerd.sock
+/run/containerd/containerd.sock

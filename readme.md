@@ -1,22 +1,35 @@
-# LogTraceGuard: A Log-aware Trace Graph Contrastive Learning Framework for Anomaly Detection in Microservice Systems
+# CPAD: A Contrastive Positive-Unlabeled Learning Approach for Microservice Anomaly Detection
 
-**LogTraceGuard** is a log-aware trace graph contrastive learning framework for anomaly detection in microservice systems. It combines multi-granularity contrastive learning, graph neural networks, and PU learning to detect root causes of system failures using logs, metrics, and trace structures.
+## Overview
+CPAD is a unified framework for anomaly detection in microservice systems that integrates log-trace fusion, contrastive learning, and Positive-Unlabeled (PU) learning. By constructing a Log-Augmented Trace Graph (LAG), CPAD combines semantic log signals and trace topology, enabling fine-grained anomaly detection under weak supervision and noisy conditions. The model leverages multi-view contrastive learning to enhance robustness against structural and semantic perturbations.
 
+## Key Features
+- **Log-Augmented Trace Graph (LAG)**: Integrates log semantics and trace structure into a unified graph representation for anomaly detection.
+- **Multi-View Contrastive Learning**: Enhances model robustness by learning representations under structural and semantic noise.
+- **Positive-Unlabeled (PU) Learning**: Efficiently handles weakly labeled or incomplete data, reducing the reliance on large annotated datasets.
+- **Anomaly Detection and Classification**: Supports both request-level anomaly detection and span-level multi-class anomaly classification.
+
+## Requirements
+- Python 3.9+
+- PyTorch 1.13.1
+- PyTorch Geometric 2.3.0
+- Other dependencies are listed in `requirements.txt`
+
+## Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/hellolijj/CPAD
+   cd CPAD
 ## Architecture
 
-![architecutre.png](./fig/arch.png)
+![architecutre.png](./fig/CPAD.png)
 
-## 🚀 Key Features
-- **Log-aware Graph Encoder**: Node and edge features are fused with service-level logs.
-- **Multi-Granularity Contrastive Learning**: Supports node-, edge-, and graph-level representation consistency.
-- **PU Learning Classifier**: Learns from partially labeled data with only positive and unlabeled samples.
-- **Topology-Aware Augmentations**: DropNode-based graph view generator for robustness.
----
+
 
 ## 📦 Repository Structure
 
 ```
-logtraceguard/
+CPAD/
 ├── main.py                  # Entry point script
 ├── config/default.yaml     # YAML configuration
 ├── models/                 # Model definitions

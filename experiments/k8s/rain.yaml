@@ -1,0 +1,15 @@
+# config values https://www.rainbond.com/docs/installation/install-with-helm/vaules-config
+Cluster:
+  gatewayIngressIPs: 172.20.251.93 #集群入口IP
+
+  nodesForGateway:
+  - externalIP: 172.20.251.93  #k8s节点外网IP
+    internalIP: 172.20.251.93  #k8s节点内网IP
+    name: k8s-node1            #k8s节点名称
+# - More nodes for gateway
+  nodesForChaos:
+  - name: desktop-worker            #k8s节点名称
+# - More nodes for chaos
+  containerdRuntimePath: /var/run/containerd  #containerd.sock文件路径
+  # if you use RKE2 or K3S, you can use the following parameter
+  # containerdRuntimePath: /var/run/k3s/containerd
